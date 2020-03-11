@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import NewTodoForm from './NewTodoForm';
 import Todo from './Todo';
+import TodoEditor from './TodoEditor';
 
 class TodoList extends Component {
     constructor(props){
@@ -23,7 +24,7 @@ class TodoList extends Component {
         return(
             <div>
                 {this.state.todos.map((item, index) => (
-                    <Todo key={index} id={index} task={item} removeTodo={this.removeTodo}/>
+                    <Todo key={index} id={index} task={item} removeTodo={this.removeTodo} />
                 ))}
             </div>
         )
