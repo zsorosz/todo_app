@@ -12,11 +12,22 @@ class TodoList extends Component {
         this.setState(state => ({
             todos: [...state.todos, todo]
         }))
+        console.log(this.state.todos)
+    }
+    renderItems(){
+        return(
+            <div>
+                {this.state.todos.map((item, index) => (
+                    <Todo key={index} id={index} task={item} />
+                ))}
+            </div>
+        )
     }
     render(){
         return (
             <div>
                 <h1>My Todo List</h1>
+                {this.renderItems()}
                 <NewTodoForm addTodo={this.addTodo}/>
             </div>
         )
