@@ -1,0 +1,22 @@
+.NewTodoForm {
+    display: flex;
+    align-items: center;
+    margin: 2rem 0;
+    color: white;
+}
+
+.NewTodoForm-input {
+    border: none;
+    height: 1.5rem;
+    width: 60%;
+    margin: .5rem;
+}
+
+.NewTodoForm-button {
+    background-color: darkslategray;
+    border: none;
+    color: white;
+    margin: 3px;
+    padding: 5px;
+    cursor: pointer;
+}

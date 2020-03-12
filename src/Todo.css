@@ -1,0 +1,29 @@
+.Todo {
+    display: flex;
+    align-items: flex-start;
+    padding: .5rem;
+    margin-bottom: 1px;
+    background-color: darkslategray;
+}
+
+.Todo-task {
+    margin-right: auto;
+    align-self: center;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.Todo-button {
+    background-color: teal;
+    border: none;
+    color: white;
+    margin: 3px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.Todo-button__edit {
+
+}
+
