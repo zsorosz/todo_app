@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import NewTodoForm from './NewTodoForm';
 import Todo from './Todo';
-import TodoEditor from './TodoEditor';
 
 class TodoList extends Component {
     constructor(props){
@@ -9,11 +8,17 @@ class TodoList extends Component {
         this.state = {todos: []};
         this.addTodo = this.addTodo.bind(this);
         this.removeTodo = this.removeTodo.bind(this);
+        this.updateTodo = this.updateTodo.bind(this);
     }
     addTodo(todo){
         this.setState(state => ({
             todos: [...state.todos, todo]
         }))
+    }
+    updateTodo(todo, id){
+        let newTodos = this.state.todos.map(function(item, index){ return index == id ? todo : item});
+        this.setState({todos: newTodos});
+        this.renderItems();
     }
     removeTodo(todo){
         let newTodos = this.state.todos.filter(function(value, index, arr){ return index !== todo;})
@@ -24,7 +29,7 @@ class TodoList extends Component {
         return(
             <div>
                 {this.state.todos.map((item, index) => (
-                    <Todo key={index} id={index} task={item} removeTodo={this.removeTodo} />
+                    <Todo key={index} id={index} task={item} removeTodo={this.removeTodo} updateTodo={this.updateTodo}/>
                 ))}
             </div>
         )

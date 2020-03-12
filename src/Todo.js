@@ -7,6 +7,7 @@ class Todo extends Component {
         this.state = {isEditing: false};
         this.handleDelete = this.handleDelete.bind(this);
         this.handleEdit = this.handleEdit.bind(this);
+        this.editTodo = this.editTodo.bind(this);
     }
     handleDelete(evt){
         evt.preventDefault();
@@ -16,10 +17,14 @@ class Todo extends Component {
         evt.preventDefault();
         this.setState({isEditing: true});
     }
+    editTodo(todo){
+        this.setState({isEditing: false});
+        this.props.updateTodo(todo, this.props.id);
+    }
     render(){
         if(this.state.isEditing){
             return (
-                <div><TodoEditor task={this.props.task} /></div>
+                <div><TodoEditor task={this.props.task} editTodo={this.editTodo}/></div>
             )
         } else {
             return (
