@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import './NewTodoForm.css';
 
 class NewTodoForm extends Component {
     constructor(props){
@@ -17,16 +18,17 @@ class NewTodoForm extends Component {
     }
     render(){
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form className="NewTodoForm" onSubmit={this.handleSubmit}>
                 <label htmlFor="newTodo">To do: </label>
                 <input 
+                    className="NewTodoForm-input"
                     type="text"
                     name="newTodo" 
                     id="newTodo" 
                     value={this.state.newTodo} 
                     onChange={this.handleChange}>
                 </input>
-                <button>Add</button>
+                <button className="NewTodoForm-button">Add</button>
             </form>
         )
     }

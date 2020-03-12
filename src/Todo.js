@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import TodoEditor from './TodoEditor';
+import './Todo.css';
 
 class Todo extends Component {
     constructor(props){
@@ -28,10 +29,10 @@ class Todo extends Component {
             )
         } else {
             return (
-                <div>
-                    <div>{this.props.task}</div>
-                    <button onClick={this.handleEdit}>Edit</button>
-                    <button onClick={this.handleDelete}>x</button>
+                <div className="Todo">
+                    <div className="Todo-task">{this.props.task}</div>
+                    <button className="Todo-button Todo-button__edit" onClick={this.handleEdit}>Edit</button>
+                    <button className="Todo-button Todo-button__delete" onClick={this.handleDelete}>X</button>
                 </div>
                 )
         }

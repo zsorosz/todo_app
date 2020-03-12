@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import NewTodoForm from './NewTodoForm';
 import Todo from './Todo';
+import './TodoList.css';
 
 class TodoList extends Component {
     constructor(props){
         super(props);
-        this.state = {todos: []};
+        this.state = {todos: ["cook"]};
         this.addTodo = this.addTodo.bind(this);
         this.removeTodo = this.removeTodo.bind(this);
         this.updateTodo = this.updateTodo.bind(this);
@@ -36,8 +37,8 @@ class TodoList extends Component {
     }
     render(){
         return (
-            <div>
-                <h1>My Todo List</h1>
+            <div className="TodoList">
+                <h1 className="TodoList-header">My Todo List</h1>
                 {this.renderItems()}
                 <NewTodoForm addTodo={this.addTodo}/>
             </div>

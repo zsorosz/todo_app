@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import './TodoEditor.css';
 
 class TodoEditor extends Component {
     constructor(props){
@@ -13,19 +14,19 @@ class TodoEditor extends Component {
     handleSubmit(evt){
         evt.preventDefault();
         this.props.editTodo(this.state.editTodo);
-        // this.setState({newTodo: ""});
     }
     render(){
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form className="TodoEditor" onSubmit={this.handleSubmit}>
                 <input 
+                    className="TodoEditor-input"
                     value={this.state.editTodo}
                     type="text"
                     name="editTodo" 
                     id="editTodo" 
                     onChange={this.handleChange}>
                 </input>
-                <button>Save</button>
+                <button className="TodoEditor-button">Save</button>
             </form>
         )
     }
